@@ -1,6 +1,7 @@
 import uuid from 'uuid';
+import { Sequelize, DataTypes } from "sequelize";
 
-module.exports = (sequelize: any, DataTypes: any) => {
+module.exports = (sequelize: Sequelize, DataTypes: any) => {
   return sequelize.define(
     "Amenity",
     {
