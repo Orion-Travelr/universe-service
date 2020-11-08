@@ -11,6 +11,7 @@ USER node
 COPY package*.json ./
 RUN npm install
 COPY --from=builder /var/www/dist/ dist/
+COPY --from=builder /var/www/database/ database/
 COPY --from=builder /var/www/.env .
 EXPOSE 3001
 CMD npm run serve:debug
