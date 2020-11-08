@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Wifi",
+    "slug": "wifi",
+    "description": "Free continuous wifi internet."
+  },
+  {
+    "name": "Kitchen",
+    "slug": "kitchen",
+    "description": "Kitchen with sink, dishwasher, refridgerator, and microwave access."
+  },
+  {
+    "name": "Gym",
+    "slug": "gym",
+    "description": "Treadmills, weights,"
+  },
+  {
+    "name": "Sauna",
+    "slug": "sauna",
+    "description": "Relax in the hot sauna."
+  },
+  {
+    "name": "Swimming Pool",
+    "slug": "pool",
+    "description": "Private or Shared."
+  },
+  {
+    "name": "Cable TV",
+    "slug": "cable",
+    "description": "Free television with over 400 channels."
+  },
+  {
+    "name": "Masseuse onsite",
+    "slug": "masseuse",
+    "description": "Daily massages from our on-site Masseuse"
+  },
+  {
+    "name": "Bistro",
+    "slug": "bistro",
+    "description": "Meet, mingle and connect over a meal at the Bistro"
+  },
+  {
+    "name": "Bar",
+    "slug": "bar",
+    "description": "24/7 Bar access with over 20 imported beers."
+  },
+  {
+    "name": "Complimentary Breakfast",
+    "slug": "continental_breakfast",
+    "description": "Free breakfast available daily between 5am - 9am."
+  }
+]

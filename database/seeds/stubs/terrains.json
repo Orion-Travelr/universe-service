@@ -1,0 +1,246 @@
+[
+  {
+    "name": "desert",
+    "description": "NULL"
+  },
+  {
+    "name": "grasslands",
+    "description": "NULL"
+  },
+  {
+    "name": "mountains",
+    "description": "NULL"
+  },
+  {
+    "name": "jungle",
+    "description": "NULL"
+  },
+  {
+    "name": "rainforests",
+    "description": "NULL"
+  },
+  {
+    "name": "tundra",
+    "description": "NULL"
+  },
+  {
+    "name": "ice caves",
+    "description": "NULL"
+  },
+  {
+    "name": "mountain ranges",
+    "description": "NULL"
+  },
+  {
+    "name": "swamp",
+    "description": "NULL"
+  },
+  {
+    "name": "jungles",
+    "description": "NULL"
+  },
+  {
+    "name": "gas giant",
+    "description": "NULL"
+  },
+  {
+    "name": "forests",
+    "description": "NULL"
+  },
+  {
+    "name": "lakes",
+    "description": "NULL"
+  },
+  {
+    "name": "grassy hills",
+    "description": "NULL"
+  },
+  {
+    "name": "swamps",
+    "description": "NULL"
+  },
+  {
+    "name": "cityscape",
+    "description": "NULL"
+  },
+  {
+    "name": "ocean",
+    "description": "NULL"
+  },
+  {
+    "name": "rock",
+    "description": "NULL"
+  },
+  {
+    "name": "mountain",
+    "description": "NULL"
+  },
+  {
+    "name": "barren",
+    "description": "NULL"
+  },
+  {
+    "name": "scrublands",
+    "description": "NULL"
+  },
+  {
+    "name": "savanna",
+    "description": "NULL"
+  },
+  {
+    "name": "canyons",
+    "description": "NULL"
+  },
+  {
+    "name": "sinkholes",
+    "description": "NULL"
+  },
+  {
+    "name": "volcanoes",
+    "description": "NULL"
+  },
+  {
+    "name": "lava rivers",
+    "description": "NULL"
+  },
+  {
+    "name": "caves",
+    "description": "NULL"
+  },
+  {
+    "name": "rivers",
+    "description": "NULL"
+  },
+  {
+    "name": "airless asteroid",
+    "description": "NULL"
+  },
+  {
+    "name": "glaciers",
+    "description": "NULL"
+  },
+  {
+    "name": "ice canyons",
+    "description": "NULL"
+  },
+  {
+    "name": "fungus forests",
+    "description": "NULL"
+  },
+  {
+    "name": "fields",
+    "description": "NULL"
+  },
+  {
+    "name": "rock arches",
+    "description": "NULL"
+  },
+  {
+    "name": "grass",
+    "description": "NULL"
+  },
+  {
+    "name": "plains",
+    "description": "NULL"
+  },
+  {
+    "name": "urban",
+    "description": "NULL"
+  },
+  {
+    "name": "hills",
+    "description": "NULL"
+  },
+  {
+    "name": "oceans",
+    "description": "NULL"
+  },
+  {
+    "name": "bogs",
+    "description": "NULL"
+  },
+  {
+    "name": "savannas",
+    "description": "NULL"
+  },
+  {
+    "name": "rocky islands",
+    "description": "NULL"
+  },
+  {
+    "name": "seas",
+    "description": "NULL"
+  },
+  {
+    "name": "mesas",
+    "description": "NULL"
+  },
+  {
+    "name": "unknown",
+    "description": "NULL"
+  },
+  {
+    "name": "deserts",
+    "description": "NULL"
+  },
+  {
+    "name": "reefs",
+    "description": "NULL"
+  },
+  {
+    "name": "islands",
+    "description": "NULL"
+  },
+  {
+    "name": "rocky deserts",
+    "description": "NULL"
+  },
+  {
+    "name": "valleys",
+    "description": "NULL"
+  },
+  {
+    "name": "ash",
+    "description": "NULL"
+  },
+  {
+    "name": "toxic cloudsea",
+    "description": "NULL"
+  },
+  {
+    "name": "plateaus",
+    "description": "NULL"
+  },
+  {
+    "name": "verdant",
+    "description": "NULL"
+  },
+  {
+    "name": "rocky canyons",
+    "description": "NULL"
+  },
+  {
+    "name": "acid pools",
+    "description": "NULL"
+  },
+  {
+    "name": "rocky",
+    "description": "NULL"
+  },
+  {
+    "name": "vines",
+    "description": "NULL"
+  },
+  {
+    "name": "cities",
+    "description": "NULL"
+  },
+  {
+    "name": "savannahs",
+    "description": "NULL"
+  },
+  {
+    "name": "cliffs",
+    "description": "NULL"
+  }
+]
