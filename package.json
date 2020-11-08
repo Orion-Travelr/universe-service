@@ -14,7 +14,7 @@
     "serve:debug": "NODE_ENV=development node dist/server.js",
     "serve": "node dist/server.js",
     "start": "npm run serve",
-    "copy:assets": "ts-node copyStaticAssets.js"
+    "copy:assets": "node copyAssets.js"
   },
   "dependencies": {
     "@hapi/hapi": "20.0.1",

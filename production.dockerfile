@@ -1,7 +1,10 @@
 FROM node:14 as builder
 WORKDIR /var/www
-COPY . .
+COPY package*.json ./
 RUN npm ci
+COPY tsconfig*.json ./
+COPY src src
+COPY .env ./
 RUN npm run build
 
 FROM node:14 as serve
