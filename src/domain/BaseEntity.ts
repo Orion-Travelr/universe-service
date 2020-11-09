@@ -1,9 +1,5 @@
 import {UniqueEntity} from "./UniqueEntity";
 
-const isEntity = (v: any): v is BaseEntity<any> => {
-  return v instanceof BaseEntity;
-};
-
 export abstract class BaseEntity<T> {
   protected readonly _id: UniqueEntity;
   public readonly props: T;
@@ -14,7 +10,6 @@ export abstract class BaseEntity<T> {
   }
 
   public equals(object?: BaseEntity<T>): boolean {
-
     if (object === null) {
       return false;
     }
@@ -23,10 +18,14 @@ export abstract class BaseEntity<T> {
       return true;
     }
 
-    if (!isEntity(object)) {
+    if (!BaseEntity.isEntity(object)) {
       return false;
     }
 
     return this._id.equals(object._id);
+  }
+
+  private static isEntity(v: any): v is BaseEntity<any> {
+    return v instanceof BaseEntity;
   }
 }

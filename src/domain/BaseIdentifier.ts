@@ -4,25 +4,23 @@ export class BaseIdentifier<T> {
     this.value = value;
   }
 
-  equals (id?: BaseIdentifier<T>): boolean {
+  public equals(id?: BaseIdentifier<T>): boolean {
     if (id === null || id === undefined) {
       return false;
     }
+
     if (!(id instanceof this.constructor)) {
       return false;
     }
+
     return id.toValue() === this.value;
   }
 
-  toString () {
+  public toString(): string {
     return String(this.value);
   }
 
-  /**
-   * Return raw value of identifier
-   */
-
-  toValue (): T {
+  public toValue(): T {
     return this.value;
   }
 }
