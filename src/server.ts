@@ -2,56 +2,54 @@
 
 import { Server, Request, ResponseToolkit } from "@hapi/hapi";
 import config from './config';
-import routes from './routes/api';
+import routes from './routes';
 const akaya = require('akaya');
+import Logger from './services/logger';
 
 const HOST = config.host;
 const HOST_PORT = config.port;
 
 (async () => {
-  try {
 
-    const server = new Server({
-      port: HOST_PORT,
-      host: HOST,
-      routes: {
-        cors: {
-          origin: ["*"],
-          headers: ["Accept", "Content-Type"],
-          additionalHeaders: ["X-Requested-With"]
-        }
-      },
-      debug: { request: ['*'] }
-    });
-
-    await server.register([akaya, routes], {
-      routes: {
-        prefix: '/api'
+  const server = new Server({
+    port: HOST_PORT,
+    host: HOST,
+    routes: {
+      cors: {
+        origin: ["*"],
+        headers: ["Accept", "Content-Type"],
+        additionalHeaders: ["X-Requested-With"]
       }
-    });
+    },
+    debug: { request: ['*'] }
+  });
 
-    server.route({
-      method: '*',
-      path: '/{any*}',
-      handler: (request:Request, h: ResponseToolkit) => {
-        return h.response({statusCode: 404, server: config.name, host: `${HOST}:${HOST_PORT}`}).code(404);
-      }
-    })
+  await server.register([akaya, routes], {
+    routes: {
+      prefix: '/api'
+    }
+  });
 
-    server.events.on('response', function (response: any) {
-      console.log(`${HOST}:${HOST_PORT}: - - ${response.method.toUpperCase()} ${response.path} --> ${response.response.statusCode}`);
-    });
+  server.route({
+    method: '*',
+    path: '/{any*}',
+    handler: (request:Request, h:ResponseToolkit) => {
+      return h.response({statusCode: 404, server: config.name, host: `${HOST}:${HOST_PORT}`}).code(404);
+    }
+  })
 
-    server.events.on('log', (event:any, tags:any) => {
-      if (tags.error) {
-        console.log(`Server error: ${event.error ? event.error.message : 'unknown'}`);
-      }
-    });
+  server.events.on('response', function (response: any) {
+    Logger.info(`${config.host}:${config.port}: - - ${response.method.toUpperCase()} ${response.path} --> ${response.response.statusCode}`);
+  });
 
-    await server.start();
+  server.events.on('log', (event: any, tags: any) => {
+    if (tags.error) {
+      Logger.error(`${config.env}] Server error: ${event.error ? event.error.message : 'unknown'}`);
+    }
+  });
 
-    console.log(`Server running on ${HOST}:${HOST_PORT}`);
-  } catch (err) {
-    console.log(err);
-  }
-})();
+  await server.start();
+
+  Logger.info(`[${config.env}] Server running on ${config.host}:${config.port}`);
+
+})().catch((error: Error) => Logger.error(`${config.env}] Server error: ${error ? error.message : 'unknown'}`));

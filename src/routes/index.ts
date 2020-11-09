@@ -1,4 +1,4 @@
-import {index, show} from '../../controllers/planet';
+import {index, show} from '../modules/planet/application/http/PlanetController';
 
 export default {
   name: "ApiRoutes",
