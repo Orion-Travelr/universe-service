@@ -9,6 +9,10 @@ export abstract class BaseEntity<T> {
     this.props = props;
   }
 
+  public get id(): UniqueEntity {
+    return this._id;
+  }
+
   public equals(object?: BaseEntity<T>): boolean {
     if (object === null) {
       return false;

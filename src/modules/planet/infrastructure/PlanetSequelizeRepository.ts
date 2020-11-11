@@ -7,7 +7,7 @@ const PlanetDb = db.Planet;
 
 export class PlanetSequelizeRepository implements PlanetsRepository {
   static async getByPlanetId(id: number): Promise<Planet> {
-    const planet = await PlanetDb.findById(id, { include: ['amenities', 'galaxy', 'photo', 'terrains']});
+    const planet = await PlanetDb.findOne({ where: { id: id}, include: ['amenities', 'galaxy', 'photo', 'terrains'] });
 
     return PlanetMapper.toDomain(planet);
   }

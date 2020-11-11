@@ -6,7 +6,7 @@ export default {
     server.route([
       {
         method: "GET",
-        path: "/planet",
+        path: "/planets",
         config: {
           id: 'planet.index',
           handler: index
@@ -14,7 +14,7 @@ export default {
       },
       {
         method: "GET",
-        path: "/planet/{id}",
+        path: "/planets/{id}",
         config: {
           id: 'planet.show',
           handler: show,

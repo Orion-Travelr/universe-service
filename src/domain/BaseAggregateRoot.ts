@@ -1,12 +1,7 @@
 import {BaseEntity} from "./BaseEntity";
-import {UniqueEntity} from "./UniqueEntity";
 
 export abstract class BaseAggregateRoot<T> extends BaseEntity<T> {
   private _domainEvents: any[] = [];
-
-  public get id(): UniqueEntity {
-    return this._id;
-  }
 
   public get domainEvents(): any[] {
     return this._domainEvents;

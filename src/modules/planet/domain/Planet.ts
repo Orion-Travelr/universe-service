@@ -31,7 +31,7 @@ export class Planet extends BaseAggregateRoot<PlanetProps> {
   }
 
   public getPopulations(): number {
-    return this.props.diameter;
+    return this.props.population;
   }
 
   public isFeatured(): boolean {
