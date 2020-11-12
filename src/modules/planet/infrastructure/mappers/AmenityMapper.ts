@@ -16,7 +16,7 @@ export class AmenityMapper implements BaseMapper<PlanetAmenity> {
 
   public static toView(amenity: PlanetAmenity): AmenityView {
     return {
-      amenity_id: amenity.id.toValue(),
+      id: amenity.id.toValue(),
       name: amenity.getName(),
       description: amenity.getDescription(),
       slug: amenity.getSlug(),

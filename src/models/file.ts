@@ -43,7 +43,7 @@ module.exports = (sequelize: any, DataTypes: any) => {
 
       getterMethods: {
         thumbnail() {
-          return 'images/planets/thumbs' + path.sep + this.file_name.slice(0, -4) + '-300x300.jpg';
+          return 'https://orion-travelr.s3-us-west-1.amazonaws.com/images/planets/thumbs' + path.sep + this.file_name.slice(0, -4) + '-300x300.jpg';
         },
       },
     }

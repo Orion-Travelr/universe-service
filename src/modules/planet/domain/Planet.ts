@@ -1,5 +1,7 @@
 import {BaseAggregateRoot, UniqueEntity} from "../../../domain";
 import {PlanetAmenity, PlanetPhoto, PlanetTerrain} from "./";
+import {Galaxy} from './Galaxy';
+
 
 export interface PlanetProps {
   galaxy_id: number,
@@ -7,10 +9,15 @@ export interface PlanetProps {
   description: string,
   diameter: number,
   population: number,
+  climate: string,
+  rotation_period_hours: number
+  price_dollars: number,
+  price_cents: number,
   featured?: boolean,
   terrains?: PlanetTerrain[],
   amenities?: PlanetAmenity[],
   photo?: PlanetPhoto,
+  galaxy: Galaxy,
 }
 
 export class Planet extends BaseAggregateRoot<PlanetProps> {
@@ -30,8 +37,23 @@ export class Planet extends BaseAggregateRoot<PlanetProps> {
     return this.props.diameter;
   }
 
-  public getPopulations(): number {
+  public getPopulation(): number {
     return this.props.population;
+  }
+  
+  public getGalaxy(): Galaxy
+  {
+    return this.props.galaxy;
+  }
+  
+  public getPriceInDollars(): number
+  {
+    return this.props.price_dollars;
+  }
+  
+  public getPriceInCents(): number
+  {
+    return this.props.price_cents;
   }
 
   public isFeatured(): boolean {
@@ -52,6 +74,16 @@ export class Planet extends BaseAggregateRoot<PlanetProps> {
 
   public getPhoto(): PlanetPhoto|null {
     return this.props.photo;
+  }
+  
+  public getClimate(): string
+  {
+    return this.props.climate;
+  }
+  
+  public getRotationPeriodInHours(): number
+  {
+    return this.props.rotation_period_hours;
   }
 
   public addAmenity(amenity: PlanetAmenity): void {

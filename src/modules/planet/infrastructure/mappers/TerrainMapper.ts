@@ -15,7 +15,7 @@ export class TerrainMapper implements BaseMapper<Planet> {
 
   public static toView(terrain: PlanetTerrain): TerrainView {
     return {
-      terrain_id: terrain.id.toValue(),
+      id: terrain.id.toValue(),
       name: terrain.getName(),
       description: terrain.getDescription(),
     }

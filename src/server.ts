@@ -1,6 +1,9 @@
 "use strict";
 
-import { Server, Request, ResponseToolkit } from "@hapi/hapi";
+process.title = 'universe';
+
+import { Server, Request, ResponseToolkit } from "@hapi/hapi"
+import inert from '@hapi/inert';
 import config from './config';
 import routes from './routes';
 const akaya = require('akaya');
@@ -24,11 +27,22 @@ const HOST_PORT = config.port;
     debug: { request: ['*'] }
   });
 
-  await server.register([akaya, routes], {
+  await server.register([akaya, inert, routes], {
     routes: {
       prefix: '/api'
     }
   });
+  
+  server.route({
+    method: 'GET',
+    path: '/images/{file*}',
+    handler: {
+      directory: {
+        path: 'public/images',
+        listing: true
+      }
+    }
+  })
 
   server.route({
     method: '*',

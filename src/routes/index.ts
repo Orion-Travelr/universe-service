@@ -1,4 +1,7 @@
-import {index, show} from '../modules/planet/application/http/PlanetController';
+import {PlanetController} from '../modules/planet/application/http/PlanetController';
+import {PlanetPersistenceRepository} from '../modules/planet/infrastructure';
+
+const controller = new PlanetController(PlanetPersistenceRepository);
 
 export default {
   name: "ApiRoutes",
@@ -9,7 +12,7 @@ export default {
         path: "/planets",
         config: {
           id: 'planet.index',
-          handler: index
+          handler: controller.index.bind(controller)
         }
       },
       {
@@ -17,25 +20,25 @@ export default {
         path: "/planets/{id}",
         config: {
           id: 'planet.show',
-          handler: show,
+          handler: controller.show.bind(controller)
         }
       },
-      {
-        method: "GET",
-        path: "/galaxies",
-        config: {
-          id: 'galaxies.index',
-          handler: index
-        }
-      },
-      {
-        method: "GET",
-        path: "/galaxies/{id}",
-        config: {
-          id: 'galaxies.show',
-          handler: show,
-        }
-      }
+      // {
+      //   method: "GET",
+      //   path: "/galaxies",
+      //   config: {
+      //     id: 'galaxies.index',
+      //     handler: index
+      //   }
+      // },
+      // {
+      //   method: "GET",
+      //   path: "/galaxies/{id}",
+      //   config: {
+      //     id: 'galaxies.show',
+      //     handler: show,
+      //   }
+      // }
     ]);
   }
 };
