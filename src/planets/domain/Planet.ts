@@ -1,4 +1,4 @@
-import {BaseAggregateRoot, UniqueEntity} from "../../../domain";
+import {BaseAggregateRoot, UniqueEntity} from "../../core/domain";
 import {PlanetAmenity, PlanetPhoto, PlanetTerrain} from "./";
 import {Galaxy} from './Galaxy';
 

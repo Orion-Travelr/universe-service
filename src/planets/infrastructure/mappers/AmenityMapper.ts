@@ -1,6 +1,6 @@
 import {Planet, PlanetAmenity} from "../../domain";
-import {UniqueEntity} from "../../../../domain";
-import {BaseMapper} from "../../../../infrastructure";
+import {UniqueEntity} from "../../../core/domain";
+import {BaseMapper} from "../../../core/infrastructure";
 import {AmenityView} from "../../application/viewmodels";
 
 export class AmenityMapper implements BaseMapper<PlanetAmenity> {

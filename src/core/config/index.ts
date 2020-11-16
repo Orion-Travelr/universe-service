@@ -1,5 +1,4 @@
 import dotenv from 'dotenv';
-import {databases} from './db';
 
 const envFound = dotenv.config();
 if (envFound.error) {
@@ -21,6 +20,4 @@ export default {
   log: {
     level: "silly"
   },
-
-  db: databases[process.env.NODE_ENV]
 };

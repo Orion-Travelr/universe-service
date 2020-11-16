@@ -1,6 +1,6 @@
 import {PlanetPhoto} from '../../domain';
-import {UniqueEntity} from "../../../../domain";
-import {BaseMapper} from "../../../../infrastructure";
+import {UniqueEntity} from "../../../core/domain";
+import {BaseMapper} from "../../../core/infrastructure";
 import {PhotoView} from '../../application/viewmodels';
 
 export class PhotoMapper implements BaseMapper<PlanetPhoto> {

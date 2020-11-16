@@ -1,5 +1,5 @@
 import {Planet} from "../domain";
-import {BaseRepository} from "../../../infrastructure";
+import {BaseRepository} from "../../core/infrastructure";
 
 export interface PlanetsRepository extends BaseRepository<Planet> {
   getAllPlanets(): Promise<Planet[]>;

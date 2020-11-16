@@ -1,13 +1,14 @@
 import {Planet} from "../domain";
-import db from '../../../models'
 import {PlanetsRepository} from "./PlanetRepository";
 import {PlanetMapper} from "./index";
 
-const PlanetDb = db.Planet;
-
-export class PlanetSequelizeRepository implements PlanetsRepository {
+export class PlanetPersistenceRepository implements PlanetsRepository {
+  private ormRepo:any;
+  constructor(ormRepo: any) {
+    this.ormRepo = ormRepo;
+  }
   async getByPlanetId(id: number): Promise<Planet> {
-    const planet = await PlanetDb.findOne({ where: { id: id}, include: ['amenities', 'galaxy', 'photo', 'terrains'] });
+    const planet = await this.ormRepo.findOne({ where: { id: id}, include: ['amenities', 'galaxy', 'photo', 'terrains'] });
 
     return PlanetMapper.toDomain(planet);
   }
@@ -17,7 +18,7 @@ export class PlanetSequelizeRepository implements PlanetsRepository {
   }
 
   async getAllPlanets(): Promise<Planet[]> {
-    const planets = await PlanetDb.findAll({ include: ['amenities', 'galaxy', 'photo', 'terrains']});
+    const planets = await this.ormRepo.findAll({ include: ['amenities', 'galaxy', 'photo', 'terrains']});
 
     return planets.map((planet: any) => PlanetMapper.toDomain(planet));
   }

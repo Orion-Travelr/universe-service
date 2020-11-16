@@ -4,16 +4,19 @@ process.title = 'universe';
 
 import { Server, Request, ResponseToolkit } from "@hapi/hapi"
 import inert from '@hapi/inert';
-import config from './config';
-import routes from './routes';
+import config from './core/config';
+import routes from './core/routes';
 const akaya = require('akaya');
-import Logger from './services/logger';
+import Logger from './core/services/logger';
+import {orm} from './core/config/orm';
 
 const HOST = config.host;
 const HOST_PORT = config.port;
 
 (async () => {
-
+  
+  await orm();
+  
   const server = new Server({
     port: HOST_PORT,
     host: HOST,

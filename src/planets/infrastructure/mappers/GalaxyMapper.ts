@@ -1,6 +1,6 @@
 import {Planet} from "../../domain";
-import {UniqueEntity} from "../../../../domain";
-import {BaseMapper} from "../../../../infrastructure";
+import {UniqueEntity} from "../../../core/domain";
+import {BaseMapper} from "../../../core/infrastructure";
 import {Galaxy} from '../../domain/Galaxy';
 import {GalaxyView} from '../../application/viewmodels';
 

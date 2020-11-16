@@ -1,6 +1,6 @@
 import {Planet, PlanetTerrain} from "../../domain";
-import {UniqueEntity} from "../../../../domain";
-import {BaseMapper} from "../../../../infrastructure";
+import {UniqueEntity} from "../../../core/domain";
+import {BaseMapper} from "../../../core/infrastructure";
 import {TerrainView} from "../../application/viewmodels";
 
 export class TerrainMapper implements BaseMapper<Planet> {

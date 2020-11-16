@@ -12,7 +12,6 @@ export class PlanetController {
   
   public async index(request: Request, h: ResponseToolkit): Promise<PlanetView[]>
   {
-    console.log('hello');
     const planets = await this.planetRepo.getAllPlanets();
   
     return planets.map((planet: Planet) => PlanetMapper.toView(planet));
