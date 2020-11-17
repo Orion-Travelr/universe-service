@@ -39,18 +39,15 @@ export class PlanetEntity extends BaseAggregateRoot<PlanetProps> {
     return this.props.population;
   }
   
-  public getGalaxy(): GalaxyEntity
-  {
+  public getGalaxy(): GalaxyEntity {
     return this.props.galaxy;
   }
   
-  public getPriceInDollars(): number
-  {
+  public getPriceInDollars(): number {
     return Math.round(this.props.price_cents / 100);
   }
   
-  public getPriceInCents(): number
-  {
+  public getPriceInCents(): number {
     return this.props.price_cents;
   }
 
@@ -74,13 +71,11 @@ export class PlanetEntity extends BaseAggregateRoot<PlanetProps> {
     return this.props.photo;
   }
   
-  public getClimate(): string
-  {
+  public getClimate(): string {
     return this.props.climate;
   }
   
-  public getRotationPeriodInHours(): number
-  {
+  public getRotationPeriodInHours(): number {
     return this.props.rotation_period_hours;
   }
 

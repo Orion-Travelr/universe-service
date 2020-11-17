@@ -10,8 +10,7 @@ export class GalaxyEntity extends BaseEntity<GalaxyProps> {
     return new GalaxyEntity(props, id);
   }
   
-  public getName(): string
-  {
+  public getName(): string {
     return this.props.name;
   }
 }

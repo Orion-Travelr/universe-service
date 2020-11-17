@@ -11,13 +11,11 @@ export class PlanetTerrainEntity extends BaseEntity<PlanetTerrainProps> {
     return new PlanetTerrainEntity(props, id);
   }
 
-  public getName(): string
-  {
+  public getName(): string {
     return this.props.name;
   }
 
-  public getDescription(): string|null
-  {
+  public getDescription(): string|null {
     return this.props.description;
   }
 }

@@ -12,23 +12,19 @@ export class PlanetPhotoEntity extends BaseEntity<PlanetPhotoProps> {
     return new PlanetPhotoEntity(props, id);
   }
   
-  public getName(): string
-  {
+  public getName(): string {
     return this.props.name;
   }
   
-  public getFileName(): string
-  {
+  public getFileName(): string {
     return this.props.file_name;
   }
   
-  public getFilePath(): string
-  {
+  public getFilePath(): string {
     return this.props.file_path;
   }
   
-  public getThumbnail(): string
-  {
+  public getThumbnail(): string {
     return this.props.thumbnail;
   }
 }

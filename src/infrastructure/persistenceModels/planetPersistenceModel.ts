@@ -1,4 +1,4 @@
-import {Entity, ManyToMany, ManyToOne, Collection, OneToMany, Property} from '@mikro-orm/core';
+import {Entity, ManyToMany, ManyToOne, Collection, Property} from '@mikro-orm/core';
 import {BasePersistenceModel} from '../../core/infrastructure/BasePersistenceModel';
 import {GalaxyPersistenceModel} from './galaxyPersistenceModel';
 import {AmenityPersistenceModel} from './amenityPersistenceModel';
@@ -49,7 +49,7 @@ export class PlanetPersistenceModel extends BasePersistenceModel {
   })
   public terrains:  Collection<TerrainPersistenceModel>;
   
-  public static create(): PlanetPersistenceModel {
-    return new PlanetPersistenceModel;
+  public static create(...props: any[]): PlanetPersistenceModel {
+    return new PlanetPersistenceModel().assign(props);
   }
 }

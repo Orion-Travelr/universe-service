@@ -12,18 +12,15 @@ export class PlanetAmenityEntity extends BaseEntity<PlanetAmenityProps> {
     return new PlanetAmenityEntity(props, id);
   }
 
-  public getName(): string
-  {
+  public getName(): string {
     return this.props.name;
   }
 
-  public getSlug(): string
-  {
+  public getSlug(): string {
     return this.props.slug;
   }
 
-  public getDescription(): string|null
-  {
+  public getDescription(): string|null {
     return this.props.description;
   }
 }
