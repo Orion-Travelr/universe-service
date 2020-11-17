@@ -2,20 +2,33 @@
 
 process.title = 'universe';
 
-import { Server, Request, ResponseToolkit } from "@hapi/hapi"
+import {EntityManager, MikroORM, RequestContext} from '@mikro-orm/core';
+import {Server, Request, ResponseToolkit} from "@hapi/hapi"
+import {getOrmInstance} from './config/orm';
+import routes from './routes';
 import inert from '@hapi/inert';
 import config from './config';
-import routes from './routes';
 const akaya = require('akaya');
 import Logger from './services/logger';
-import {orm} from './config/orm';
 
 const HOST = config.host;
 const HOST_PORT = config.port;
 
+// export const DI = {} as {
+//   orm: MikroORM,
+//   em: EntityManager,
+// }
+//
+// export interface ServerRequestInterface extends Request {
+//   DI: {
+//     orm: MikroORM,
+//     em: EntityManager,
+//   }
+// }
+
 (async () => {
   
-  await orm();
+  await getOrmInstance();
   
   const server = new Server({
     port: HOST_PORT,
@@ -29,7 +42,12 @@ const HOST_PORT = config.port;
     },
     debug: { request: ['*'] }
   });
-
+  
+  // server.ext('onRequest',async (req: ServerRequestInterface, h:any) => {
+  //   req.DI = DI;
+  //   return h.continue;
+  // })
+  
   await server.register([akaya, inert, routes], {
     routes: {
       prefix: '/api'

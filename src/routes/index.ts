@@ -23,22 +23,6 @@ export default {
           handler: controller.show.bind(controller)
         }
       },
-      // {
-      //   method: "GET",
-      //   path: "/galaxies",
-      //   config: {
-      //     id: 'galaxies.index',
-      //     handler: index
-      //   }
-      // },
-      // {
-      //   method: "GET",
-      //   path: "/galaxies/{id}",
-      //   config: {
-      //     id: 'galaxies.show',
-      //     handler: show,
-      //   }
-      // }
     ]);
   }
 };

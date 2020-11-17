@@ -5,10 +5,11 @@ import {TerrainMapper} from "./mappers/terrainMapper";
 import {AmenityMapper} from "./mappers/amenityMapper";
 import {PhotoMapper} from './mappers/photoMapper';
 import {GalaxyMapper} from './mappers/galaxyMapper';
-import {getRepo} from '../config/orm';
+import {getOrmInstance} from '../config/orm';
 import {PlanetPersistenceModel} from './persistenceModels/planetPersistenceModel';
 
-const planetRepo = new PlanetPersistenceRepository(getRepo(PlanetPersistenceModel));
+// FAKE DI! :D :D :D :D
+const planetRepo = new PlanetPersistenceRepository(getOrmInstance().then((orm) => orm.em.getRepository(PlanetPersistenceModel)));
 
 export {
   PlanetRepository,

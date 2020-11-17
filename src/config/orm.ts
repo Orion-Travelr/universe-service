@@ -2,7 +2,18 @@ import {MikroORM} from '@mikro-orm/core';
 import {TsMorphMetadataProvider} from '@mikro-orm/reflection';
 import {SqliteDriver} from '@mikro-orm/sqlite';
 
-export async function orm(): Promise<MikroORM<SqliteDriver>>{
+let instance:any;
+let semaphore = false;
+export const getOrmInstance = async () => {
+  if (!instance && !semaphore) {
+    semaphore = true;
+    instance = await orm();
+  }
+  
+  return instance;
+}
+
+async function orm(): Promise<MikroORM<SqliteDriver>>{
   return await MikroORM.init({
     entities: [
       './dist/core/infrastructure/BasePersistenceModel.ts',
@@ -17,10 +28,4 @@ export async function orm(): Promise<MikroORM<SqliteDriver>>{
     metadataProvider: TsMorphMetadataProvider,
     debug: true,
   });
-}
-
-export async function getRepo(model: any) {
-  const theOrm = await orm();
-  
-  return await theOrm.em.getRepository(model);
 }
