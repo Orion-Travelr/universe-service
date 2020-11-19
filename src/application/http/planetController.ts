@@ -11,13 +11,13 @@ export class PlanetController {
   }
   
   public async index(request: Request, h: ResponseToolkit): Promise<PlanetViewModel[]> {
-    const planets = await this.planetRepo.getAllPlanets();
+    const planets = await this.planetRepo.getAll();
   
     return planets.map((planet: PlanetEntity) => PlanetMapper.toView(planet));
   }
   
   public async show(request: Request, h: ResponseToolkit): Promise<PlanetViewModel> {
-    const planet = await this.planetRepo.getByPlanetId(Number(request.params.id));
+    const planet = await this.planetRepo.getById(Number(request.params.id));
   
     return PlanetMapper.toView(planet);
   }

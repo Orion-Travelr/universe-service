@@ -7,7 +7,7 @@ export class PlanetPersistenceRepository implements PlanetRepository {
   constructor(ormRepo: any) {
     this.ormRepo = ormRepo;
   }
-  async getByPlanetId(id: number): Promise<PlanetEntity> {
+  async getById(id: number): Promise<PlanetEntity> {
     const theOrm = await this.ormRepo;
     const planet = await theOrm.findOneOrFail(id, { populate: ['amenities', 'galaxy', 'terrains'] });
 
@@ -18,7 +18,7 @@ export class PlanetPersistenceRepository implements PlanetRepository {
     return;
   }
 
-  async getAllPlanets(): Promise<PlanetEntity[]> {
+  async getAll(): Promise<PlanetEntity[]> {
     const theOrm = await this.ormRepo;
     const planets = await theOrm.findAll({ populate: ['amenities', 'terrains', 'galaxy']});
 

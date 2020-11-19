@@ -16,8 +16,8 @@ export const getOrmInstance = async () => {
 async function orm(): Promise<MikroORM<SqliteDriver>>{
   return await MikroORM.init({
     entities: [
-      './dist/core/infrastructure/BasePersistenceModel.ts',
-      './dist/infrastructure/persistenceModels/**/*.*'
+      './dist/core/infrastructure/BasePersistenceModel.js',
+      './dist/infrastructure/persistenceModels/**/*.*',
     ],
     entitiesTs: [
       './src/core/infrastructure/BasePersistenceModel.ts',

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Port of LAMP application to JS",
   "author": "Jake Toolson",
+  "license": "proprietary",
   "repository": {
     "type": "git",
     "url": "https://github.com/jaketoolson/travelr-js"
