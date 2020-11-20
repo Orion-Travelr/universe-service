@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-//    "declaration": true,
+    "declaration": true,
     "module": "CommonJS",
     "target": "ESNext",
     "noImplicitAny": true,
