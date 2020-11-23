@@ -7,16 +7,29 @@ import {getOrmInstance} from './config/orm';
 import routes from './routes';
 import inert from '@hapi/inert';
 import config from './config';
-const akaya = require('akaya');
 import Logger from './services/logger';
 
 const HOST = config.host;
 const HOST_PORT = config.port;
 
+// process.stdin.resume();
+//
+// process.on('SIGINT', () => {
+//
+//   console.log('Deregistering service... ');
+//
+//   // Timeout to make sure the signal sent to
+//   // Pusher was successful before shutting down
+//   setTimeout(() => {
+//     process.exit();
+//   }, 1000);
+// });
+
+
 (async () => {
-  
+
   await getOrmInstance();
-  
+
   const server = new Server({
     port: HOST_PORT,
     host: HOST,
@@ -27,15 +40,18 @@ const HOST_PORT = config.port;
         additionalHeaders: ["X-Requested-With"]
       }
     },
+    router: {
+      stripTrailingSlash: true
+    },
     debug: { request: ['*'] }
   });
-  
-  await server.register([akaya, inert, routes], {
+
+  await server.register([inert, routes], {
     routes: {
       prefix: '/api'
     }
   });
-  
+
   server.route({
     method: 'GET',
     path: '/images/{file*}',
@@ -55,7 +71,7 @@ const HOST_PORT = config.port;
     }
   })
 
-  server.events.on('response', function (response: any) {
+  server.events.on('response', (response: any) => {
     Logger.info(`${config.host}:${config.port}: - - ${response.method.toUpperCase()} ${response.path} --> ${response.response.statusCode}`);
   });
 
@@ -69,4 +85,7 @@ const HOST_PORT = config.port;
 
   Logger.info(`[${config.env}] Server running on ${config.host}:${config.port}`);
 
-})().catch((error: Error) => Logger.error(`${config.env}] Server error: ${error ? error.message : 'unknown'}`));
+})().catch((error: Error) => {
+  Logger.error(`${config.env}] Server error: ${error ? error.message : 'unknown'}`)
+  process.exit();
+});

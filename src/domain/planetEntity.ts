@@ -1,6 +1,7 @@
 import {BaseAggregateRoot, UniqueEntity} from "../core/domain";
-import {PlanetAmenityEntity, PlanetTerrainEntity, PlanetPhotoEntity} from "./";
+import {AmenityEntity, TerrainEntity, PhotoEntity} from "./";
 import {GalaxyEntity} from './';
+import {ReviewsEntity} from "./reviewsEntity";
 
 export interface PlanetProps {
   galaxy_id: number|bigint,
@@ -12,10 +13,11 @@ export interface PlanetProps {
   rotation_period_hours: number
   price_cents: number,
   featured?: boolean,
-  terrains?: PlanetTerrainEntity[],
-  amenities?: PlanetAmenityEntity[],
-  photo?: PlanetPhotoEntity,
+  terrains?: TerrainEntity[],
+  amenities?: AmenityEntity[],
+  photo?: PhotoEntity,
   galaxy: GalaxyEntity,
+  reviews?: ReviewsEntity[],
 }
 
 export class PlanetEntity extends BaseAggregateRoot<PlanetProps> {
@@ -38,15 +40,15 @@ export class PlanetEntity extends BaseAggregateRoot<PlanetProps> {
   public getPopulation(): number {
     return this.props.population;
   }
-  
+
   public getGalaxy(): GalaxyEntity {
     return this.props.galaxy;
   }
-  
+
   public getPriceInDollars(): number {
     return Math.round(this.props.price_cents / 100);
   }
-  
+
   public getPriceInCents(): number {
     return this.props.price_cents;
   }
@@ -59,32 +61,56 @@ export class PlanetEntity extends BaseAggregateRoot<PlanetProps> {
     this.props.featured = true;
   }
 
-  public getTerrains(): PlanetTerrainEntity[]|null {
+  public getTerrains(): TerrainEntity[]|null {
     return this.props.terrains;
   }
 
-  public getAmenities(): PlanetAmenityEntity[]|null {
+  public getAmenities(): AmenityEntity[]|null {
     return this.props.amenities;
   }
 
-  public getPhoto(): PlanetPhotoEntity|null {
+  public getPhoto(): PhotoEntity|null {
     return this.props.photo;
   }
-  
+
   public getClimate(): string {
     return this.props.climate;
   }
-  
+
   public getRotationPeriodInHours(): number {
     return this.props.rotation_period_hours;
   }
 
-  public addAmenity(amenity: PlanetAmenityEntity): void {
+  public getReviews(): ReviewsEntity[]|null {
+    return this.props.reviews;
+  }
+
+  public addAmenity(amenity: AmenityEntity): void {
     this.props.amenities.push(amenity);
   }
 
-  public addTerrain(terrain: PlanetTerrainEntity): void {
+  public addTerrain(terrain: TerrainEntity): void {
     this.props.terrains.push(terrain);
+  }
+
+  public addReview(review: ReviewsEntity): void {
+    this.props.reviews.push(review);
+  }
+
+  public getTotalReviews(): number {
+    return this.getReviews().length;
+  }
+
+  public getAverageRating(): number {
+    let reviews = this.getReviews();
+
+    if (!reviews || reviews.length === 0) {
+      return 0;
+    }
+
+    const total = reviews.map((r: ReviewsEntity) => r.getRating()).reduce((a, b) => a + b, 0);
+
+    return total / reviews.length;
   }
 
   public static create (props: PlanetProps, id?: UniqueEntity): PlanetEntity {

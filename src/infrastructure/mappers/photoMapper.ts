@@ -1,27 +1,27 @@
-import {PlanetPhotoEntity} from '../../domain';
+import {PhotoEntity} from '../../domain';
 import {UniqueEntity} from "../../core/domain";
 import {BaseMapper} from "../../core/infrastructure";
 import {PhotoViewModel} from '../../application/viewModels';
 
-export class PhotoMapper implements BaseMapper<PlanetPhotoEntity> {
+export class PhotoMapper implements BaseMapper<PhotoEntity> {
 
-  public static toDomain(planetPhoto: any): PlanetPhotoEntity {
-    return  PlanetPhotoEntity.create({
-      name: planetPhoto.name,
+  public static toDomain(planetPhoto: any): PhotoEntity {
+    return  PhotoEntity.create({
+      name: planetPhoto.file_name,
       file_path: planetPhoto.file_path,
       file_name: planetPhoto.file_name,
-      thumbnail: planetPhoto.thumbnail,
     }, new UniqueEntity(planetPhoto.id));
   }
 
-  public static toView(planetPhoto: PlanetPhotoEntity): PhotoViewModel {
+  public static toView(planetPhoto: PhotoEntity): PhotoViewModel {
     return {
       thumbnail: planetPhoto.getThumbnail(),
       file_path: planetPhoto.getFilePath(),
+      name: planetPhoto.getFileName(),
     }
   }
 
-  public static toPersistence(planetPhoto: PlanetPhotoEntity): any {
+  public static toPersistence(planetPhoto: PhotoEntity): any {
     return {
 
     };

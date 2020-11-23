@@ -1,12 +1,12 @@
-import {PlanetEntity, PlanetAmenityEntity} from "../../domain";
+import {PlanetEntity, AmenityEntity} from "../../domain";
 import {UniqueEntity} from "../../core/domain";
 import {BaseMapper} from "../../core/infrastructure";
 import {AmenityViewModel} from "../../application/viewModels";
 
-export class AmenityMapper implements BaseMapper<PlanetAmenityEntity> {
+export class AmenityMapper implements BaseMapper<AmenityEntity> {
 
-  public static toDomain(amenity: any): PlanetAmenityEntity {
-    return  PlanetAmenityEntity.create({
+  public static toDomain(amenity: any): AmenityEntity {
+    return  AmenityEntity.create({
       amenity_id: amenity.amenity_id,
       name: amenity.name,
       description: amenity.description,
@@ -14,7 +14,7 @@ export class AmenityMapper implements BaseMapper<PlanetAmenityEntity> {
     }, new UniqueEntity(amenity.id));
   }
 
-  public static toView(amenity: PlanetAmenityEntity): AmenityViewModel {
+  public static toView(amenity: AmenityEntity): AmenityViewModel {
     return {
       id: amenity.id.toValue(),
       name: amenity.getName(),

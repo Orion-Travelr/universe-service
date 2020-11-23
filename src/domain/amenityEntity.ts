@@ -7,9 +7,9 @@ export interface PlanetAmenityProps {
   description: string | null,
 }
 
-export class PlanetAmenityEntity extends BaseEntity<PlanetAmenityProps> {
-  public static create(props: PlanetAmenityProps, id?: UniqueEntity): PlanetAmenityEntity {
-    return new PlanetAmenityEntity(props, id);
+export class AmenityEntity extends BaseEntity<PlanetAmenityProps> {
+  public static create(props: PlanetAmenityProps, id?: UniqueEntity): AmenityEntity {
+    return new AmenityEntity(props, id);
   }
 
   public getName(): string {

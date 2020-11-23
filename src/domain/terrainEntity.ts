@@ -6,9 +6,9 @@ export interface PlanetTerrainProps {
   description: string|null,
 }
 
-export class PlanetTerrainEntity extends BaseEntity<PlanetTerrainProps> {
-  public static create(props: PlanetTerrainProps, id?: UniqueEntity): PlanetTerrainEntity {
-    return new PlanetTerrainEntity(props, id);
+export class TerrainEntity extends BaseEntity<PlanetTerrainProps> {
+  public static create(props: PlanetTerrainProps, id?: UniqueEntity): TerrainEntity {
+    return new TerrainEntity(props, id);
   }
 
   public getName(): string {

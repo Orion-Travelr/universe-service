@@ -10,6 +10,9 @@ import {PlanetPersistenceModel} from './persistenceModels/planetPersistenceModel
 import {GalaxyPersistenceModel} from './persistenceModels/galaxyPersistenceModel';
 import {GalaxyRepository} from './galaxyRepository';
 import {GalaxyPersistenceRepository} from './galaxyPersistenceRepository';
+import {AmenityRepository} from "./amenityRepository";
+import {AmenityPersistenceRepository} from "./amenityPersistenceRepository";
+import {AmenityPersistenceModel} from "./persistenceModels/amenityPersistenceModel";
 
 // LOL This module is getting out of control.
 const ormInstance = getOrmInstance();
@@ -17,17 +20,21 @@ const ormInstance = getOrmInstance();
 // FAKE DI! :D :D :D :D
 const galaxyRepo = new GalaxyPersistenceRepository(ormInstance.then((orm) => orm.em.getRepository(GalaxyPersistenceModel)));
 const planetRepo = new PlanetPersistenceRepository(ormInstance.then((orm) => orm.em.getRepository(PlanetPersistenceModel)));
+const amenityRepo = new AmenityPersistenceRepository(ormInstance.then((orm) => orm.em.getRepository(AmenityPersistenceModel)));
 
 export {
-  galaxyRepo as GalaxyPersistenceRepository,
   GalaxyRepository,
   GalaxyMapper,
-  
+  galaxyRepo as GalaxyPersistenceRepository,
+
   PlanetRepository,
-  planetRepo as PlanetPersistenceRepository,
   PhotoMapper,
-  
+  planetRepo as PlanetPersistenceRepository,
+
+  AmenityRepository,
+  AmenityMapper,
+  amenityRepo as AmenityPersistenceRepository,
+
   PlanetMapper,
   TerrainMapper,
-  AmenityMapper,
 }

@@ -1,4 +1,5 @@
 import {AmenityViewModel, PhotoViewModel, TerrainViewModel} from './';
+import {ReviewViewModel} from "./reviewViewModel";
 
 export interface PlanetViewModel {
   id: string | number,
@@ -14,4 +15,5 @@ export interface PlanetViewModel {
   amenities_available: null|AmenityViewModel[],
   terrains?: null|TerrainViewModel[],
   galaxy: null|{},
+  reviews?: null|ReviewViewModel[],
 }
