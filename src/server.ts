@@ -25,7 +25,6 @@ const HOST_PORT = config.port;
 //   }, 1000);
 // });
 
-
 (async () => {
 
   await getOrmInstance();
@@ -67,7 +66,7 @@ const HOST_PORT = config.port;
     method: '*',
     path: '/{any*}',
     handler: (request:Request, h:ResponseToolkit) => {
-      return h.response({statusCode: 404, server: config.name, host: `${HOST}:${HOST_PORT}`}).code(404);
+      return h.response({statusCode: 404, version: config.version, server: config.name, host: `${HOST}:${HOST_PORT}`}).code(404);
     }
   })
 

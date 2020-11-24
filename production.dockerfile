@@ -16,4 +16,4 @@ RUN npm install
 COPY --from=builder /var/www/dist/ dist/
 COPY --from=builder /var/www/.env .
 EXPOSE 3001
-CMD npm run serve:debug
+CMD npm run serve
