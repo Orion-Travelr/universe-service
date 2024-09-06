@@ -2,7 +2,7 @@
   "compilerOptions": {
     "declaration": true,
     "module": "CommonJS",
-    "target": "ESNext",
+    "target": "ES2018", // decorator errors with ES5
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
@@ -12,8 +12,10 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "outDir": "dist/",
-    "baseUrl": ".",
+    "incremental": true,
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
     "paths": {
       "*": [
         "node_modules/*"

@@ -1,73 +1,88 @@
 {
   "name": "travelr-js.services.universe",
   "version": "1.0.0",
-  "description": "Port of LAMP application to JS",
-  "author": "Jake Toolson",
-  "license": "proprietary",
+  "description": "Port of LAMP application to JS with NEST",
   "repository": {
     "type": "git",
     "url": "https://github.com/jaketoolson/travelr-js"
   },
+  "license": "proprietary",
+  "author": "Jake Toolson",
   "scripts": {
-    "build:dev": "npm run clean && tsc -p tsconfig.json",
     "build": "npm run clean && tsc -p tsconfig.release.json",
+    "build:dev": "npm run clean && tsc -p tsconfig.json",
     "clean": "rimraf dist",
     "copy:assets": "node copyAssets.js",
-    "serve:dev": "NODE_ENV=development nodemon --watch src --ext ts,tsx,js --exec ts-node --delay 3 src/server.ts",
     "serve": "node dist/server.js universe",
+    "serve:dev": "NODE_ENV=development nodemon --watch src --ext ts,tsx,js --exec ts-node --delay 3 src/server.ts",
     "start": "npm run serve",
     "test": "lab --assert code --coverage --leaks"
   },
+  "nodemonConfig": {
+    "delay": 2500,
+    "ignore": [
+      "node_modules"
+    ]
+  },
   "dependencies": {
-    "@hapi/hapi": "20.0.2",
-    "@hapi/inert": "^6.0.3",
-    "@mikro-orm/core": "^4.3.0",
-    "@mikro-orm/reflection": "4.3.0",
-    "@mikro-orm/sqlite": "^4.3.0",
-    "axios": "0.21.0",
-    "dotenv": "^8.2.0",
-    "jsonapi-serializer": "^3.5.6",
-    "lodash": "^4.17.15",
+    "@mikro-orm/core": "^6.3.8",
+    "@mikro-orm/reflection": "^6.3.8",
+    "@mikro-orm/sqlite": "^6.3.8",
+    "@nestjs/common": "^10.3.2",
+    "@nestjs/core": "^10.3.2",
+    "@nestjs/jwt": "^10.2.0",
+    "@nestjs/platform-express": "^10.3.2",
+    "axios": "^1.7.7",
+    "dotenv": "^9.0.2",
+    "helmet": "^7.1.0",
+    "jsonapi-serializer": "^3.6.9",
+    "lodash": "^4.17.21",
+    "nest-winston": "^1.9.7",
     "query-string": "^6.13.7",
-    "ssri": "8.0.0",
+    "reflect-metadata": "^0.2.1",
+    "rxjs": "^7.8.1",
     "uuid": "8.3.1",
-    "winston": "^3.2.1"
+    "winston": "^3.14.2"
   },
   "devDependencies": {
-    "@hapi/code": "^8.0.2",
-    "@hapi/lab": "^24.1.0",
-    "@mikro-orm/cli": "^4.3.0",
-    "@types/axios": "^0.14.0",
+    "@mikro-orm/cli": "^6.3.8",
+    "@nestjs/cli": "^10.3.1",
+    "@nestjs/schematics": "^10.1.0",
+    "@nestjs/testing": "^10.3.2",
+    "@swc/cli": "^0.3.9",
+    "@swc/core": "^1.4.0",
     "@types/bluebird": "^3.5.33",
     "@types/cors": "^2.8.6",
-    "@types/hapi": "^18.0.4",
-    "@types/hapi__hapi": "^20.0.2",
-    "@types/hapi__inert": "^5.2.1",
+    "@types/express": "^4.17.21",
     "@types/node": "^14.14.7",
     "@types/shelljs": "^0.8.8",
     "@types/uuid": "^8.3.0",
     "@types/validator": "^13.1.0",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
     "code": "^5.2.4",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
     "faker": "^4.1.0",
     "file-loader": "6.2.0",
     "lab": "^18.0.2",
-    "mocha": "^7.2.0",
     "nodemon": "2.0.6",
+    "prettier": "^3.2.5",
     "rimraf": "^3.0.2",
-    "shelljs": "^0.8.4",
-    "tsc-watch": "^4.2.8",
-    "typescript": "4.0.5"
+    "shelljs": "^0.8.5",
+    "source-map-support": "^0.5.21",
+    "supertest": "^6.3.4",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
+    "tsc-watch": "^5.0.3",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.5.4"
   },
   "engines": {
     "node": ">= 8",
     "npm": "^5.0.0"
-  },
-  "nodemonConfig": {
-    "ignore": [
-      "node_modules"
-    ],
-    "delay": 2500
   }
 }

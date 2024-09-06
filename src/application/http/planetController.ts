@@ -1,7 +1,6 @@
 import {PlanetMapper, PlanetRepository} from '../../infrastructure';
 import {PlanetEntity} from "../../domain";
 import {PlanetViewModel} from "../viewModels";
-import {ResponseToolkit, Request} from 'hapi';
 
 export interface PlanetSearchParams {
   name: string|null,
