@@ -1,8 +1,13 @@
 import { Module } from '@nestjs/common';
 import {PlanetModule} from "./modules/planets/PlanetModule";
+import {GalaxyModule} from "./modules/galaxies/GalaxyModule";
 
 @Module({
-  imports: [PlanetModule],
+  imports:
+    [
+      PlanetModule,
+      GalaxyModule
+    ],
   controllers: [],
   providers: [],
 })

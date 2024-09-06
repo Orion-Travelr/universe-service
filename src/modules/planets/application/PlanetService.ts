@@ -1,6 +1,4 @@
 import {Inject, Injectable} from "@nestjs/common";
-import {AmenityPersistenceRepository} from "../infrastructure/AmenityPersistenceRepository";
-import {AmenityEntity} from "../domain/AmenityEntity";
 import {PlanetPersistenceRepository} from "../infrastructure/PlanetPersistenceRepository";
 import {PlanetEntity} from "../domain/PlanetEntity";
 

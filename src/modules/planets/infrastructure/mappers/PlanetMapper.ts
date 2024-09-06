@@ -7,8 +7,9 @@ import {AmenityMapper} from "./AmenityMapper";
 import {AmenityEntity} from "../../domain/AmenityEntity";
 import {PlanetViewModel} from "../../../../application/viewModels";
 import {GalaxyMapper} from "../../../galaxies/infrastructure/mappers/GalaxyMapper";
-import {PlanetPersistenceModel} from "../PlanetPersistenceModel";
 import {PhotoMapper} from "./PhotoMapper";
+import {ReviewsEntity} from "../../domain/ReviewsEntity";
+import {ReviewMapper} from "./ReviewMapper";
 
 export class PlanetMapper implements BaseMapper<PlanetEntity> {
   public static toDomain(planet: any): PlanetEntity {
@@ -25,7 +26,7 @@ export class PlanetMapper implements BaseMapper<PlanetEntity> {
       galaxy: GalaxyMapper.toDomain(planet.galaxy),
       terrains: planet.terrains.toArray().map((t: TerrainEntity) => TerrainMapper.toDomain(t)),
       amenities: planet.amenities.toArray().map((a: AmenityEntity) => AmenityMapper.toDomain(a)),
-      // reviews: planet.reviews.toArray().map((r: ReviewsEntity) => ReviewMapper.toDomain(r)),
+      reviews: planet.reviews.toArray().map((r: ReviewsEntity) => ReviewMapper.toDomain(r)),
     }, new UniqueEntity(planet.id));
   }
 
@@ -44,7 +45,7 @@ export class PlanetMapper implements BaseMapper<PlanetEntity> {
       galaxy: GalaxyMapper.toView(planet.getGalaxy()),
       amenities_available: planet.getAmenities().map((a: AmenityEntity) => AmenityMapper.toView(a)),
       terrains: planet.getTerrains().map((t: TerrainEntity) => TerrainMapper.toView(t)),
-      // reviews: planet.getReviews().map((r: ReviewsEntity) => ReviewMapper.toView(r)),
+      reviews: planet.getReviews().map((r: ReviewsEntity) => ReviewMapper.toView(r)),
     }
   }
 

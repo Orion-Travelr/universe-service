@@ -4,7 +4,7 @@ import {
   GalaxyPersistenceRepository,
   AmenityPersistenceRepository
 } from '../infrastructure';
-import {GalaxyController} from '../application/http/galaxyController';
+import {GalaxyController} from '../application/http/GalaxyController';
 import {AmenityController} from "../application/http/AmenityController";
 
 const planetController = new PlanetController(PlanetPersistenceRepository);

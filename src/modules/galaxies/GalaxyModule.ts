@@ -1,9 +1,14 @@
 import { Module } from '@nestjs/common';
-import {PlanetModule} from "../planets/PlanetModule";
+import {GalaxyService} from "./application/GalaxyService";
+import {GalaxyPersistenceRepository} from "./infrastructure/GalaxyPersistenceRepository";
+import {GalaxyController} from "../../application/http/GalaxyController";
 
 @Module({
   imports: [],
-  controllers: [],
-  providers: [],
+  controllers: [GalaxyController],
+  providers: [
+    GalaxyService,
+    GalaxyPersistenceRepository
+  ],
 })
 export class GalaxyModule {}
