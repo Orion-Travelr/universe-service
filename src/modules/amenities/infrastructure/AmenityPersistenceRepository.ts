@@ -1,6 +1,7 @@
-import {GalaxyEntity, AmenityEntity} from '../domain';
-import {AmenityMapper, AmenityRepository} from './index';
-import {AmenityPersistenceModel} from "./persistenceModels/amenityPersistenceModel";
+import {AmenityRepository} from "./AmenityRepository";
+import {AmenityMapper} from "./AmenityMapper";
+import {AmenityPersistenceModel} from "./AmenityPersistenceModel";
+import  {AmenityEntity} from "../domain/AmenityEntity";
 
 export class AmenityPersistenceRepository implements AmenityRepository {
   private readonly ormRepo:any;

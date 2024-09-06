@@ -1,7 +1,6 @@
 import {GalaxyMapper, GalaxyRepository} from '../../infrastructure';
 import {GalaxyEntity} from '../../domain';
 import {GalaxyViewModel} from '../viewModels';
-import {ResponseToolkit, Request} from 'hapi';
 
 export class GalaxyController {
   private repo: GalaxyRepository;
