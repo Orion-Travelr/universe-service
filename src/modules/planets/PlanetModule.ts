@@ -8,4 +8,4 @@ import {AmenityPersistenceRepository} from "./infrastructure/AmenityPersistenceR
   controllers: [AmenityController],
   providers: [AmenityService, AmenityPersistenceRepository],
 })
-export class AmenityModule {}
+export class PlanetModule {}

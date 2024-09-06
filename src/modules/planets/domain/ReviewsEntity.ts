@@ -1,4 +1,4 @@
-import {BaseEntity, UniqueEntity} from "../core/domain";
+import {BaseEntity, UniqueEntity} from "../../../core/domain";
 
 export interface ReviewProps {
   title: string,

@@ -1,7 +1,9 @@
-import {BaseAggregateRoot, UniqueEntity} from "../core/domain";
-import {AmenityEntity, TerrainEntity, PhotoEntity} from "./";
-import {GalaxyEntity} from './';
-import {ReviewsEntity} from "./reviewsEntity";
+import {BaseAggregateRoot, UniqueEntity} from "../../../core/domain";
+import {AmenityEntity} from "./AmenityEntity";
+import {TerrainEntity} from "./TerrainEntity";
+import {PhotoEntity} from "./PhotoEntity";
+import {GalaxyEntity} from "../../../domain";
+import {ReviewsEntity} from "./ReviewsEntity";
 
 export interface PlanetProps {
   galaxy_id: number|bigint,

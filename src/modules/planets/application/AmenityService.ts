@@ -6,14 +6,13 @@ import {AmenityEntity} from "../domain/AmenityEntity";
 class AmenityService {
   constructor(@Inject(AmenityPersistenceRepository) private readonly repo: AmenityPersistenceRepository) {}
 
-  getAll():AmenityEntity[] {
-    return
+  getAll():Promise<AmenityEntity[]> {
+    return this.repo.getAll();
   }
 
-  getById(id: number): AmenityEntity {
-    return
+  getById(id: number): Promise<AmenityEntity> {
+    return this.repo.getById(id);
   }
-
 }
 
 export {AmenityService}

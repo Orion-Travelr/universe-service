@@ -1,9 +1,8 @@
-import {AmenityMapper} from "../../modules/amenities/infrastructure/AmenityMapper";
-import {AmenityRepository} from "../../modules/amenities/infrastructure/AmenityRepository";
-import {AmenityEntity} from "../../modules/amenities/domain/AmenityEntity";
 import {AmenityViewModel} from '../viewModels';
 import {Controller, Get, Param} from "@nestjs/common";
-import {AmenityService} from "../../modules/amenities/application/AmenityService";
+import {AmenityEntity} from "../../modules/planets/domain/AmenityEntity";
+import {AmenityService} from "../../modules/planets/application/AmenityService";
+import {AmenityMapper} from "../../modules/planets/infrastructure/AmenityMapper";
 
 @Controller()
 class AmenityController {
