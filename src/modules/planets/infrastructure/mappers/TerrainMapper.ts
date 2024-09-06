@@ -1,9 +1,10 @@
-import {PlanetEntity, TerrainEntity} from "../../domain";
-import {UniqueEntity} from "../../core/domain";
-import {BaseMapper} from "../../core/infrastructure";
-import {TerrainViewModel} from "../../application/viewModels";
+import {BaseMapper} from "../../../../core/infrastructure";
+import {UniqueEntity} from "../../../../core/domain";
+import {PlanetEntity} from "../../domain/PlanetEntity";
+import {TerrainEntity} from "../../domain/TerrainEntity";
+import {TerrainViewModel} from "../../../../application/viewModels";
 
-export class TerrainMapper implements BaseMapper<PlanetEntity> {
+export class TerrainMapper implements BaseMapper<TerrainEntity> {
 
   public static toDomain(terrain: any): TerrainEntity {
     return  TerrainEntity.create({

@@ -1,5 +1,5 @@
 import {AmenityRepository} from "./AmenityRepository";
-import {AmenityMapper} from "./AmenityMapper";
+import {AmenityMapper} from "./mappers/AmenityMapper";
 import {AmenityPersistenceModel} from "./AmenityPersistenceModel";
 import  {AmenityEntity} from "../domain/AmenityEntity";
 

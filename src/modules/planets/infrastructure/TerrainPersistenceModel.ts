@@ -1,5 +1,5 @@
 import {Entity, Property} from '@mikro-orm/core';
-import {BasePersistenceModel} from '../../core/infrastructure/BasePersistenceModel';
+import {BasePersistenceModel} from "../../../core/infrastructure/BasePersistenceModel";
 
 @Entity({tableName: 'terrains'})
 export class TerrainPersistenceModel extends BasePersistenceModel {

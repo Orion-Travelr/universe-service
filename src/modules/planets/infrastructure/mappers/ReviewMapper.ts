@@ -1,7 +1,7 @@
-import {UniqueEntity} from "../../core/domain";
-import {BaseMapper} from "../../core/infrastructure";
-import {ReviewsEntity} from "../../domain/reviewsEntity";
-import {ReviewViewModel} from "../../application/viewModels/reviewViewModel";
+import {UniqueEntity} from "../../../../core/domain";
+import {BaseMapper} from "../../../../core/infrastructure";
+import {ReviewsEntity} from "../../domain/ReviewsEntity";
+import {ReviewViewModel} from "../../../../application/viewModels/reviewViewModel";
 
 export class ReviewMapper implements BaseMapper<ReviewsEntity> {
 

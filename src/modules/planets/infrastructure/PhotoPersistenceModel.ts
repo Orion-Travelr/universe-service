@@ -1,6 +1,6 @@
 import {Collection, Entity, OneToMany, Property} from '@mikro-orm/core';
-import {BasePersistenceModel} from '../../core/infrastructure/BasePersistenceModel';
-import {PlanetPersistenceModel} from "./planetPersistenceModel";
+import {BasePersistenceModel} from "../../../core/infrastructure/BasePersistenceModel";
+import {PlanetPersistenceModel} from "./PlanetPersistenceModel";
 
 @Entity({tableName: 'files'})
 export class PhotoPersistenceModel extends BasePersistenceModel {

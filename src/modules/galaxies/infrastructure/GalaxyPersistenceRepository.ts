@@ -1,7 +1,7 @@
-import {GalaxyEntity} from '../domain';
-import {GalaxyMapper} from './index';
-import {GalaxyRepository} from './';
-import {GalaxyPersistenceModel} from './persistenceModels/galaxyPersistenceModel';
+import {GalaxyRepository} from "./GalaxyRepository";
+import {GalaxyEntity} from "../domain/GalaxyEntity";
+import {GalaxyMapper} from "./mappers/GalaxyMapper";
+import {GalaxyPersistenceModel} from "./GalaxyPersistenceModel";
 
 export class GalaxyPersistenceRepository implements GalaxyRepository {
   private readonly ormRepo:any;

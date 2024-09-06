@@ -1,7 +1,7 @@
-import {AmenityEntity} from "../domain/AmenityEntity";
-import {BaseMapper} from "../../../core/infrastructure";
-import {AmenityViewModel} from "../../../application/viewModels";
-import {UniqueEntity} from "../../../core/domain";
+import {AmenityEntity} from "../../domain/AmenityEntity";
+import {BaseMapper} from "../../../../core/infrastructure";
+import {AmenityViewModel} from "../../../../application/viewModels";
+import {UniqueEntity} from "../../../../core/domain";
 
 export class AmenityMapper implements BaseMapper<AmenityEntity> {
   public static toDomain(amenity: any): AmenityEntity {

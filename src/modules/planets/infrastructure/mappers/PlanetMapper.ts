@@ -1,11 +1,14 @@
-import {PlanetEntity, AmenityEntity, TerrainEntity} from "../../domain";
-import {UniqueEntity} from "../../core/domain";
-import {BaseMapper} from "../../core/infrastructure";
-import {PlanetViewModel} from "../../application/viewModels";
-import {AmenityMapper, PhotoMapper, GalaxyMapper, TerrainMapper} from "../";
-import {PlanetPersistenceModel} from '../persistenceModels/planetPersistenceModel';
-import {ReviewsEntity} from "../../domain/reviewsEntity";
-import {ReviewMapper} from "./reviewMapper";
+import {BaseMapper} from "../../../../core/infrastructure";
+import {UniqueEntity} from "../../../../core/domain";
+import {PlanetEntity} from "../../domain/PlanetEntity";
+import {TerrainEntity} from "../../domain/TerrainEntity";
+import {TerrainMapper} from "./TerrainMapper";
+import {AmenityMapper} from "./AmenityMapper";
+import {AmenityEntity} from "../../domain/AmenityEntity";
+import {PlanetViewModel} from "../../../../application/viewModels";
+import {GalaxyMapper} from "../../../galaxies/infrastructure/mappers/GalaxyMapper";
+import {PlanetPersistenceModel} from "../PlanetPersistenceModel";
+import {PhotoMapper} from "./PhotoMapper";
 
 export class PlanetMapper implements BaseMapper<PlanetEntity> {
   public static toDomain(planet: any): PlanetEntity {

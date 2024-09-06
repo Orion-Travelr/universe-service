@@ -1,7 +1,7 @@
-import {PlanetEntity} from "../domain";
-import {PlanetRepository} from "./planetRepository";
-import {PlanetMapper} from "./index";
-import {PlanetSearchParams} from "../application/http/planetController";
+import {PlanetEntity} from "../domain/PlanetEntity";
+import {PlanetRepository} from "./PlanetRepository";
+import {PlanetMapper} from "./mappers/PlanetMapper";
+import {PlanetSearchParams} from "../../../application/http/planetController";
 
 export class PlanetPersistenceRepository implements PlanetRepository {
   private readonly ormRepo:any;

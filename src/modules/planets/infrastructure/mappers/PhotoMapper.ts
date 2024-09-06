@@ -1,7 +1,7 @@
-import {PhotoEntity} from '../../domain';
-import {UniqueEntity} from "../../core/domain";
-import {BaseMapper} from "../../core/infrastructure";
-import {PhotoViewModel} from '../../application/viewModels';
+import {BaseMapper} from "../../../../core/infrastructure";
+import {UniqueEntity} from "../../../../core/domain";
+import {PhotoEntity} from "../../domain/PhotoEntity";
+import {PhotoViewModel} from "../../../../application/viewModels";
 
 export class PhotoMapper implements BaseMapper<PhotoEntity> {
 

@@ -1,9 +1,9 @@
 import {Entity, ManyToMany, ManyToOne, Collection, Property} from '@mikro-orm/core';
-import {BasePersistenceModel} from '../../core/infrastructure/BasePersistenceModel';
-import {GalaxyPersistenceModel} from './galaxyPersistenceModel';
+import {BasePersistenceModel} from "../../../core/infrastructure/BasePersistenceModel";
+import {GalaxyPersistenceModel} from "../../galaxies/infrastructure/GalaxyPersistenceModel";
 import {AmenityPersistenceModel} from './amenityPersistenceModel';
-import {TerrainPersistenceModel} from './terrainPersistenceModel';
-import {PhotoPersistenceModel} from "./photoPersistenceModel";
+import {TerrainPersistenceModel} from './TerrainPersistenceModel';
+import {PhotoPersistenceModel} from "./PhotoPersistenceModel";
 
 @Entity({tableName: 'planets'})
 export class PlanetPersistenceModel extends BasePersistenceModel {

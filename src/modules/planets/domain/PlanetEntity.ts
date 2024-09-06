@@ -2,7 +2,7 @@ import {BaseAggregateRoot, UniqueEntity} from "../../../core/domain";
 import {AmenityEntity} from "./AmenityEntity";
 import {TerrainEntity} from "./TerrainEntity";
 import {PhotoEntity} from "./PhotoEntity";
-import {GalaxyEntity} from "../../../domain";
+import {GalaxyEntity} from "../../galaxies/domain/GalaxyEntity";
 import {ReviewsEntity} from "./ReviewsEntity";
 
 export interface PlanetProps {

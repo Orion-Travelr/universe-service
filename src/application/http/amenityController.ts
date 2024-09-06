@@ -2,7 +2,7 @@ import {AmenityViewModel} from '../viewModels';
 import {Controller, Get, Param} from "@nestjs/common";
 import {AmenityEntity} from "../../modules/planets/domain/AmenityEntity";
 import {AmenityService} from "../../modules/planets/application/AmenityService";
-import {AmenityMapper} from "../../modules/planets/infrastructure/AmenityMapper";
+import {AmenityMapper} from "../../modules/planets/infrastructure/mappers/AmenityMapper";
 
 @Controller()
 class AmenityController {
