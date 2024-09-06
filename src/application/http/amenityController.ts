@@ -3,23 +3,24 @@ import {AmenityRepository} from "../../modules/amenities/infrastructure/AmenityR
 import {AmenityEntity} from "../../modules/amenities/domain/AmenityEntity";
 import {AmenityViewModel} from '../viewModels';
 import {Controller, Get, Param} from "@nestjs/common";
+import {AmenityService} from "../../modules/amenities/application/AmenityService";
 
 @Controller()
 class AmenityController {
-  constructor(private readonly repo: AmenityRepository) {}
+  constructor(private readonly service: AmenityService) {}
 
   @Get()
   public async index(): Promise<AmenityViewModel[]> {
-    const amenities = await this.repo.getAll();
+    const amenities = await this.service.getAll();
 
     return amenities.map((amenity: AmenityEntity) => AmenityMapper.toView(amenity));
   }
 
   @Get(':id')
   public async show( @Param('id') id: string): Promise<AmenityViewModel> {
-    const galaxy = await this.repo.getById(Number(id));
+    const amenity = await this.service.getById(Number(id));
 
-    return AmenityMapper.toView(galaxy);
+    return AmenityMapper.toView(amenity);
   }
 }
 
