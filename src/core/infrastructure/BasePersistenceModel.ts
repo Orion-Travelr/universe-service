@@ -1,6 +1,6 @@
 import {PrimaryKey, Property, BeforeCreate, BeforeUpdate, BaseEntity} from '@mikro-orm/core';
 
-export abstract class BasePersistenceModel extends BaseEntity<any, any>{
+export abstract class BasePersistenceModel extends BaseEntity{
   @PrimaryKey({unsigned: true, type: 'bigint'})
   public id: number;
   

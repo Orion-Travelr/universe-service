@@ -48,7 +48,7 @@ export class PlanetMapper implements BaseMapper<PlanetEntity> {
     }
   }
 
-  public static toPersistence(planet: PlanetEntity): PlanetPersistenceModel {
-    return PlanetPersistenceModel.create(planet.props);
-  }
+  // public static toPersistence(planet: PlanetEntity): PlanetPersistenceModel {
+  //   return PlanetPersistenceModel.create(planet);
+  // }
 }

@@ -4,7 +4,7 @@ import {AmenityEntity} from "../../modules/planets/domain/AmenityEntity";
 import {AmenityService} from "../../modules/planets/application/AmenityService";
 import {AmenityMapper} from "../../modules/planets/infrastructure/mappers/AmenityMapper";
 
-@Controller()
+@Controller('amenities')
 class AmenityController {
   constructor(private readonly service: AmenityService) {}
 

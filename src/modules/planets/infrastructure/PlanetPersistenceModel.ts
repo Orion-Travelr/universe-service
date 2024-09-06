@@ -1,7 +1,7 @@
-import {Entity, ManyToMany, ManyToOne, Collection, Property} from '@mikro-orm/core';
+import {Entity, ManyToMany, ManyToOne, Collection, Property, EntityDTO} from '@mikro-orm/core';
 import {BasePersistenceModel} from "../../../core/infrastructure/BasePersistenceModel";
 import {GalaxyPersistenceModel} from "../../galaxies/infrastructure/GalaxyPersistenceModel";
-import {AmenityPersistenceModel} from './amenityPersistenceModel';
+import {AmenityPersistenceModel} from './AmenityPersistenceModel';
 import {TerrainPersistenceModel} from './TerrainPersistenceModel';
 import {PhotoPersistenceModel} from "./PhotoPersistenceModel";
 
@@ -14,7 +14,7 @@ export class PlanetPersistenceModel extends BasePersistenceModel {
   public description: string;
 
   @Property({type: "bigint", unsigned: true})
-  public galaxy_id: bigint;
+  public galaxy_id: bigint | number;
 
   @Property({type: "bigint", unsigned: true})
   public fileable_id: bigint;
@@ -57,7 +57,8 @@ export class PlanetPersistenceModel extends BasePersistenceModel {
   })
   public terrains:  Collection<TerrainPersistenceModel>;
 
-  public static create(...props: any[]): PlanetPersistenceModel {
-    return new PlanetPersistenceModel().assign(props);
+  public static create(props: Partial<PlanetPersistenceModel>): PlanetPersistenceModel {
+    // return new PlanetPersistenceModel().assign(props);
+    return;
   }
 }

@@ -1,11 +1,11 @@
-import {PlanetController} from '../application/http/planetController';
+import {PlanetController} from '../application/http/PlanetController';
 import {
   PlanetPersistenceRepository,
   GalaxyPersistenceRepository,
   AmenityPersistenceRepository
 } from '../infrastructure';
 import {GalaxyController} from '../application/http/galaxyController';
-import {AmenityController} from "../application/http/amenityController";
+import {AmenityController} from "../application/http/AmenityController";
 
 const planetController = new PlanetController(PlanetPersistenceRepository);
 const galaxyController = new GalaxyController(GalaxyPersistenceRepository);

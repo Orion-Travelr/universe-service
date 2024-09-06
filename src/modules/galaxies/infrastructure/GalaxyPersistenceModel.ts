@@ -1,6 +1,6 @@
 import {Collection, Entity, OneToMany, Property} from '@mikro-orm/core';
 import {BasePersistenceModel} from "../../../core/infrastructure/BasePersistenceModel";
-import {PlanetPersistenceModel} from "../../../infrastructure/persistenceModels/planetPersistenceModel";
+import {PlanetPersistenceModel} from "../../planets/infrastructure/PlanetPersistenceModel";
 
 @Entity({tableName: 'galaxies'})
 export class GalaxyPersistenceModel extends BasePersistenceModel {
@@ -9,7 +9,7 @@ export class GalaxyPersistenceModel extends BasePersistenceModel {
   
   @OneToMany(() => PlanetPersistenceModel, ((planet: PlanetPersistenceModel) => planet.galaxy))
   public planets: Collection<PlanetPersistenceModel>;
-  
+
   public static create(): GalaxyPersistenceModel {
     return new GalaxyPersistenceModel;
   }
