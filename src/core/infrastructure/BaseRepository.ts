@@ -1,4 +1,4 @@
-import {PlanetSearchParams} from "../../application/http/planetController";
+import {PlanetSearchParams} from "../../application/http/PlanetController";
 
 export interface BaseRepository<T> {
   save(entity: T): Promise<void>;

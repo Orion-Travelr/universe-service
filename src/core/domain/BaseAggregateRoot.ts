@@ -3,10 +3,6 @@ import {BaseEntity} from "./BaseEntity";
 export abstract class BaseAggregateRoot<T> extends BaseEntity<T> {
   private _domainEvents: any[] = [];
 
-  public get domainEvents(): any[] {
-    return this._domainEvents;
-  }
-
   protected addDomainEvent(domainEvent: any): void {
     this._domainEvents.push(domainEvent);
 
